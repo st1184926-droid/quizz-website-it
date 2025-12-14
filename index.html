@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUIZ WEBSITE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- LOGIN FIRST -->
+    <div class="login-page">
+      <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter your name" />
+        <button id="login-btn">Login</button>
+      </div>
+    </div>
+
+    <!-- QUIZ WRAPPER -->
+    <main class="main">
+      <header class="main-header">
+        <a href="#" class="logo">QUIZ.</a>
+        <nav class="navbar">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <div class="container">
+        <section class="quiz-section">
+          <div class="quiz-box">
+            <h1>QUIZ</h1>
+
+            <div class="quiz-header">
+              <span>QUIZ WEBSITE</span>
+              <span class="header-score">Score: 0 / 5</span>
+              <span class="timer">Time: <span id="time-count">20</span>s</span>
+            </div>
+
+            <h2 class="question-text">Loading...</h2>
+
+            <div class="option-list"></div>
+
+            <div class="quiz-footer">
+              <span class="question-total">0 of 0 Questions</span>
+              <button class="next-btn">Next</button>
+            </div>
+          </div>
+
+          <div class="result-box">
+            <h2>Quiz Result!!</h2>
+            <div class="percenatage-conatiner">
+              <div class="circular-progress">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="score-text">Your score 0 out of 5</span>
+            </div>
+            <div class="buttons">
+              <button class="tryAgain-btn">Try Again</button>
+              <button class="goHome-btn">Go to Home</button>
+            </div>
+
+            <!-- Download certificate button (inside result box) -->
+            <button id="download-cert-btn" class="download-cert-btn">
+              Download Certificate
+            </button>
+          </div>
+        </section>
+
+        <section class="home">
+          <div class="home-content">
+            <h1>QUIZ WEBSITE</h1>
+            <p>
+              Are you ready to dive into the world of technology? Challenge your
+              knowledge on the latest trends, innovations, and history in the
+              tech realm. Good luck!
+            </p>
+            <button class="start-btn">Start Quiz</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Popup -->
+    <div class="popup-info">
+      <h2>Quiz Guide</h2>
+      <span class="info">1. All questions are compulsory</span>
+      <span class="info">2. Each question has 4 options to answer</span>
+      <span class="info">3. For every correct answer +1</span>
+      <span class="info">4. Wrong answers do not reduce score</span>
+      <span class="info">5. Score is shown at the end</span>
+
+      <div class="btn-group">
+        <button class="info-btn exit-btn">Exit quiz</button>
+        <a href="#" class="info-btn continue-btn">Continue</a>
+      </div>
+    </div>
+
+    <!-- Questions first -->
+    <script src="questions.js"></script>
+
+    <!-- html2canvas + jsPDF (for certificate) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- App script (only once) -->
+    <script src="script.js"></script>
+
+    
+    <div id="certificate-template" class="certificate-template" style="display:none;">
+      <div class="cert-wrapper">
+        <div class="cert-header">
+          <div class="cert-issuer">ATX</div>
+          <div class="cert-title">Certificate of Completion</div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-recipient">This is to certify that</div>
+          <div id="cert-name" class="cert-name">User Name</div>
+
+          <div class="cert-desc">
+            has successfully completed the Quiz with a score of
+          </div>
+
+          <div id="cert-score" class="cert-score">0 / 10</div>
+
+          <div class="cert-meta">
+            <span id="cert-percent">0%</span> • <span id="cert-date">01 Jan 2025</span>
+          </div>
+        </div>
+
+        <div class="cert-footer">
+          <div class="cert-org">ATX</div>
+          <div class="cert-sign">Authorized Signature</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
