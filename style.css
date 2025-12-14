@@ -1026,3 +1026,37 @@ body{ overflow-y:auto; }
 .download-cert-btn{ display:inline-block; }
 
 /* Safe blur for popup already handled by .main.active { filter: blur(15px); } */
+/* ---------- MOBILE RESPONSIVE FIX ---------- */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Main container (quiz + background) */
+  .container,
+  .main,
+  .wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Quiz card */
+  .quiz-container,
+  .quiz-box {
+    width: 90% !important;
+    max-width: 400px;
+    margin: 20px auto !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  /* Background section */
+  .bg,
+  .background,
+  .right-section {
+    width: 100% !important;
+    height: auto;
+  }
+}
